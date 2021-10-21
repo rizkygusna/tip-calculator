@@ -3,5 +3,55 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
   margin: 0;
+  font-family: 'Space Mono', monospace;
+  background-color: hsl(185, 41%, 84%);
+  height: 100vh;
+}
+
+header {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  font-weight: bold;
+  color: hsl(183, 100%, 15%);
+  margin-top: 10vh;
+  margin-bottom: 2.5em;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 720px;
+  width: 100%;
+  background-color: white;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.result {
+  padding: 1em;
+  border-radius: 0.6em;
+  background-color: hsl(183, 100%, 15%);
+  height: 200px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1em 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
