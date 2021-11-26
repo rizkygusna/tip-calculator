@@ -19,7 +19,29 @@
       <div class="container">
         <div class="container-flex">
           <div class="input">
-            Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People
+            <div class="bill-input">
+              <label for="bill">Bill</label>
+              <input type="number" name="bill" id="bill" step="any" value="1" />
+            </div>
+            <div class="tip-input">
+              <label for="tip">Select Tip %</label>
+              <button type="button" id="tip5">5%</button>
+              <button type="button" id="tip10">10%</button>
+              <button type="button" id="tip15">15%</button>
+              <button type="button" id="tip25">25%</button>
+              <button type="button" id="tip50">50%</button>
+              <input
+                type="number"
+                name="tip"
+                id="customTip"
+                step="any"
+                placeholder="Custom"
+              />
+            </div>
+            <div class="people-input">
+              <label for="people">Number of People</label>
+              <input type="number" name="people" id="people" value="1" />
+            </div>
           </div>
           <div class="result">Tip Amount / person Total / person Reset</div>
         </div>
