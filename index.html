@@ -18,7 +18,7 @@
     <main>
       <div class="container">
         <div class="container-flex">
-          <div class="input">
+          <div class="input-form">
             <div class="bill-input">
               <label for="bill">Bill</label>
               <input type="number" name="bill" id="bill" step="any" value="1" />
@@ -36,6 +36,7 @@
                 id="customTip"
                 step="any"
                 placeholder="Custom"
+                value=""
               />
             </div>
             <div class="people-input">
@@ -43,11 +44,26 @@
               <input type="number" name="people" id="people" value="1" />
             </div>
           </div>
-          <div class="result">Tip Amount / person Total / person Reset</div>
+          <div class="result">
+            <div class="amount-result">
+              <div class="amount-text">
+                <p>Tip Amount</p>
+                <p>/ person</p>
+              </div>
+              <h3 class="amount-number">$4.27</h3>
+            </div>
+            <div class="total-result">
+              <div class="total-text">
+                <p>Total</p>
+                <p>/ person</p>
+              </div>
+              <h3 class="total-number">$4.27</h3>
+            </div>
+            <button type="button">Reset</button>
+          </div>
         </div>
       </div>
     </main>
-
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
