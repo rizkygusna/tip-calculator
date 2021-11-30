@@ -30,6 +30,13 @@ main {
   flex-grow: 1;
 }
 
+button {
+  font-family: inherit;
+  font-size: 24px;
+  border-radius: 0.3em;
+  border: none;
+}
+
 .container {
   max-width: 720px;
   width: 100%;
@@ -42,6 +49,7 @@ main {
 .container-flex {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .input-form > div {
@@ -56,7 +64,7 @@ main {
 }
 
 .input-form input {
-  border-radius: 0.5em;
+  border-radius: 0.3em;
   border: none;
   background-color: hsl(180, 37%, 97%);
   width: 100%;
@@ -100,6 +108,30 @@ label[for='people']:before {
   bottom: -5.3em;
   width: 1em;
   background: url('./images/icon-person.svg') center / contain no-repeat;
+}
+
+.container-flex.tip-buttons {
+  flex-direction: row;
+  gap: 1em;
+  justify-content: center;
+}
+
+.tip-buttons button,
+#customTip {
+  width: 47%;
+}
+
+.tip-buttons button {
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  height: 2em;
+}
+
+.active,
+.tip-buttons button:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  font-weight: bold;
 }
 
 .result {
