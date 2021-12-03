@@ -7,7 +7,6 @@
 body {
   display: flex;
   flex-direction: column;
-  /* font-size: 24px; */
   margin: 0;
   font-family: 'Space Mono', monospace;
   background-color: hsl(185, 41%, 84%);
@@ -38,7 +37,7 @@ button {
 }
 
 .container {
-  max-width: 720px;
+  max-width: 864px;
   width: 100%;
   background-color: white;
   margin: 0 auto;
@@ -49,6 +48,10 @@ button {
 .container-flex {
   display: flex;
   flex-wrap: wrap;
+}
+
+.input-form {
+  width: 100%;
 }
 
 .input-form > div {
@@ -170,6 +173,7 @@ label[for='people']:before {
 
 .amount-result,
 .total-result {
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -185,4 +189,54 @@ p.disabled {
 
 .total-result {
   margin-bottom: 1em;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 576px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .container > .container-flex {
+    flex-direction: row;
+    gap: 1em;
+    justify-content: space-between;
+  }
+
+  .input-form,
+  .result {
+    width: 48%;
+  }
+
+  .tip-buttons button,
+  #customTip {
+    width: 47%;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+  }
+
+  .total-result {
+    align-content: flex-start;
+    flex-grow: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 992px;
+  }
+
+  .tip-buttons button,
+  #customTip {
+    width: 30%;
+  }
 }
