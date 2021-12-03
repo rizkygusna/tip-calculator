@@ -48,7 +48,6 @@ button {
 
 .container-flex {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -135,6 +134,7 @@ label[for='people']:before {
 }
 
 .result {
+  width: 100%;
   padding: 1em;
   border-radius: 0.6em;
   background-color: hsl(183, 100%, 15%);
@@ -147,4 +147,42 @@ label[for='people']:before {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.result p {
+  color: white;
+  margin: 0 0;
+}
+
+.result h3 {
+  color: hsl(172, 67%, 45%);
+  font-size: 2em;
+  margin: 0.3em 0;
+}
+
+.result button {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.amount-result,
+.total-result {
+  justify-content: space-between;
+}
+
+p.disabled {
+  font-size: 80%;
+  opacity: 50%;
+}
+
+.amount-text,
+.total-text {
+  margin: auto 0;
+}
+
+.total-result {
+  margin-bottom: 1em;
 }
