@@ -34,6 +34,12 @@ button {
   font-size: 24px;
   border-radius: 0.3em;
   border: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 864px;
+  width: 100%;
 }
 
 .container {
@@ -69,20 +75,21 @@ button {
   border-radius: 0.3em;
   border: none;
   background-color: hsl(180, 37%, 97%);
+  color: hsl(183, 100%, 15%);
   width: 100%;
   height: 2em;
   font-size: 24px;
+  font-family: inherit;
+  font-weight: bold;
   text-align: right;
   padding: 0 0.6em;
 }
 
-.input-form input[value] {
-  font-weight: bold;
-  font-family: inherit;
-  color: hsl(183, 100%, 15%);
+.input-form input:focus {
+  outline-color: hsl(172, 67%, 45%);
 }
 
-.input-form input[placeholder] {
+.input-form input::placeholder {
   color: hsl(186, 14%, 43%);
 }
 
@@ -129,10 +136,15 @@ label[for='people']:before {
   height: 2em;
 }
 
-.active,
 .tip-buttons button:hover {
-  background-color: hsl(172, 67%, 45%);
+  background-color: hsl(185, 41%, 84%);
   color: hsl(183, 100%, 15%);
+  font-weight: bold;
+}
+
+.tip-buttons button.active {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
   font-weight: bold;
 }
 
@@ -141,15 +153,6 @@ label[for='people']:before {
   padding: 1em;
   border-radius: 0.6em;
   background-color: hsl(183, 100%, 15%);
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  padding: 1em 0;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
 }
 
 .result p {
@@ -165,10 +168,21 @@ label[for='people']:before {
 
 .result button {
   width: 100%;
+  padding: 0.2em 0;
   text-transform: uppercase;
   font-weight: bold;
   background-color: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
+}
+
+.result button:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+
+.result button:disabled {
+  background-color: hsla(172, 67%, 45%, 0.3);
+  color: hsla(183, 100%, 15%, 0.3);
+  cursor: not-allowed;
 }
 
 .amount-result,
@@ -189,6 +203,15 @@ p.disabled {
 
 .total-result {
   margin-bottom: 1em;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1em 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 @media (min-width: 576px) {

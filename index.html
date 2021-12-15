@@ -21,13 +21,20 @@
           <div class="input-form">
             <div class="bill-input">
               <label for="bill">Bill</label>
-              <input type="number" name="bill" id="bill" step="any" value="1" />
+              <input
+                type="number"
+                name="bill"
+                id="bill"
+                step="0.01"
+                min="0"
+                placeholder="0"
+              />
             </div>
             <div class="tip-input">
               <label for="tip">Select Tip %</label>
               <div class="container-flex tip-buttons">
                 <button type="button" id="tip5">5%</button>
-                <button type="button" id="tip10">10%</button>
+                <button type="button" id="tip10" class="">10%</button>
                 <button type="button" id="tip15">15%</button>
                 <button type="button" id="tip25">25%</button>
                 <button type="button" id="tip50">50%</button>
@@ -38,12 +45,20 @@
                   step="any"
                   placeholder="Custom"
                   value=""
+                  min="1"
                 />
               </div>
             </div>
             <div class="people-input">
               <label for="people">Number of People</label>
-              <input type="number" name="people" id="people" value="1" />
+              <input
+                type="number"
+                name="people"
+                id="people"
+                value="1"
+                min="1"
+                placeholder="0"
+              />
             </div>
           </div>
           <div class="result">
@@ -52,14 +67,14 @@
                 <p>Tip Amount</p>
                 <p class="disabled">/ person</p>
               </div>
-              <h3 class="amount-number">$4.27</h3>
+              <h3 class="amount-number">$0.00</h3>
             </div>
             <div class="container-flex total-result">
               <div class="total-text">
                 <p>Total</p>
                 <p class="disabled">/ person</p>
               </div>
-              <h3 class="total-number">$4.27</h3>
+              <h3 class="total-number">$0.00</h3>
             </div>
             <div class="reset-section">
               <button type="button">Reset</button>
@@ -72,7 +87,9 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Rizki Gusna</a>.
+      >. Coded by <a href="https://github.com/rizkygusna">Rizki Gusna</a>.
     </footer>
+
+    <script src="./index.js"></script>
   </body>
 </html>
