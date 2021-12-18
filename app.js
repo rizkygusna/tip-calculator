@@ -26,12 +26,19 @@ const calculateTipPerPerson = (numOfPeople = 1, tip) => {
 };
 
 const onChangeHandler = () => {
-  const numOfPeople = people.value;
-  const billAmount = bill.value;
+  const numOfPeople = parseInt(people.value);
+  const billAmount = parseFloat(bill.value);
   const percent = 15;
-  const tipAmountValue = calculateTipPerPerson(
-    numOfPeople,
-    calculateTip(billAmount, percent)
-  );
+  const tip = calculateTip(billAmount, percent);
+
+  //calculate & render tip amount per person
+  const tipAmountValue = calculateTipPerPerson(numOfPeople, tip);
   tipAmount.innerHTML = `$ ${tipAmountValue}`;
+
+  //calculate & render total bill per person
+  const totalBillValue = calculateTotalBill(
+    numOfPeople,
+    calculateTotalBill(billAmount, tip)
+  );
+  total.innerHTML = `$${totalBillValue}`;
 };
