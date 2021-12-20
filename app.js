@@ -33,12 +33,12 @@ const onChangeHandler = () => {
 
   //calculate & render tip amount per person
   const tipAmountValue = calculateTipPerPerson(numOfPeople, tip);
-  tipAmount.innerHTML = `$ ${tipAmountValue}`;
+  tipAmount.innerHTML = `$ ${tipAmountValue.toFixed(2)}`;
 
   //calculate & render total bill per person
-  const totalBillValue = calculateTotalBill(
+  const totalBillValue = calculateTotalTip(
     numOfPeople,
     calculateTotalBill(billAmount, tip)
   );
-  total.innerHTML = `$${totalBillValue}`;
+  total.innerHTML = `$${totalBillValue.toFixed(2)}`;
 };
