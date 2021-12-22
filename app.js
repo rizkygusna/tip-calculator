@@ -26,9 +26,17 @@ const calculateTipPerPerson = (numOfPeople = 1, tip) => {
 };
 
 const onChangeHandler = () => {
+  const percentButton = document.querySelector('.active');
+  let percent = null;
+  if (percentButton === null) {
+    percent = 0;
+  } else {
+    percent = percentButton.value;
+  }
+  console.log(percent);
   const numOfPeople = parseInt(people.value);
   const billAmount = parseFloat(bill.value);
-  const percent = 15;
+  // const percent = percentButton.value;
   const tip = calculateTip(billAmount, percent);
 
   //calculate & render tip amount per person
@@ -41,4 +49,17 @@ const onChangeHandler = () => {
     calculateTotalBill(billAmount, tip)
   );
   total.innerHTML = `$${totalBillValue.toFixed(2)}`;
+};
+
+const onClickHandler = (btn) => {
+  const buttons = document.querySelectorAll('.tip-buttons button');
+  for (let button of buttons) {
+    //if button class not empty
+    if (button.classList != '') {
+      //remove active class
+      button.classList.toggle('active');
+    }
+  }
+  btn.classList.toggle('active');
+  onChangeHandler();
 };

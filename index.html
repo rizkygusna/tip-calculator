@@ -29,17 +29,47 @@
                 min="0"
                 placeholder="0"
                 value="0"
-                onchange="onChangeHandler()"
+                onChange="onChangeHandler()"
               />
             </div>
             <div class="tip-input">
               <label for="tip">Select Tip %</label>
               <div class="container-flex tip-buttons">
-                <button type="button" id="tip5">5%</button>
-                <button type="button" id="tip10">10%</button>
-                <button type="button" id="tip15">15%</button>
-                <button type="button" id="tip25">25%</button>
-                <button type="button" id="tip50">50%</button>
+                <button type="button" id="tip5" value="5" onClick="onClickHandler(this)">
+                  5%
+                </button>
+                <button
+                  type="button"
+                  id="tip10"
+                  value="10"
+                  onClick="onClickHandler(this)"
+                >
+                  10%
+                </button>
+                <button
+                  type="button"
+                  id="tip15"
+                  value="15"
+                  onClick="onClickHandler(this)"
+                >
+                  15%
+                </button>
+                <button
+                  type="button"
+                  id="tip25"
+                  value="25"
+                  onClick="onClickHandler(this)"
+                >
+                  25%
+                </button>
+                <button
+                  type="button"
+                  id="tip50"
+                  value="50"
+                  onClick="onClickHandler(this)"
+                >
+                  50%
+                </button>
                 <input
                   type="number"
                   name="tip"
@@ -60,7 +90,7 @@
                 value="1"
                 min="1"
                 placeholder="0"
-                onchange="onChangeHandler()"
+                onChange="onChangeHandler()"
               />
             </div>
           </div>
