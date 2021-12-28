@@ -51,6 +51,7 @@ const onChangeHandler = () => {
   total.innerHTML = `$${totalBillValue.toFixed(2)}`;
 };
 
+//handler for percent buttons
 const onClickHandler = (btn) => {
   const buttons = document.querySelectorAll('.tip-buttons button');
   for (let button of buttons) {
@@ -62,4 +63,36 @@ const onClickHandler = (btn) => {
   }
   btn.classList.toggle('active');
   onChangeHandler();
+};
+
+//handler for custom percent value
+const customHandler = () => {
+  const buttons = document.querySelectorAll('.tip-buttons button');
+  //remove active state of percent buttons
+  for (let button of buttons) {
+    //if button class not empty
+    if (button.classList != '') {
+      //remove active class
+      button.classList.toggle('active');
+    }
+  }
+
+  let percent = null;
+  percent = customTip.value;
+  console.log(percent);
+  const numOfPeople = parseInt(people.value);
+  const billAmount = parseFloat(bill.value);
+  // const percent = percentButton.value;
+  const tip = calculateTip(billAmount, percent);
+
+  //calculate & render tip amount per person
+  const tipAmountValue = calculateTipPerPerson(numOfPeople, tip);
+  tipAmount.innerHTML = `$ ${tipAmountValue.toFixed(2)}`;
+
+  //calculate & render total bill per person
+  const totalBillValue = calculateTotalTip(
+    numOfPeople,
+    calculateTotalBill(billAmount, tip)
+  );
+  total.innerHTML = `$${totalBillValue.toFixed(2)}`;
 };
