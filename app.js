@@ -33,7 +33,6 @@ const onChangeHandler = () => {
   } else {
     percent = percentButton.value;
   }
-  console.log(percent);
   const numOfPeople = parseInt(people.value);
   const billAmount = parseFloat(bill.value);
   // const percent = percentButton.value;
@@ -41,14 +40,23 @@ const onChangeHandler = () => {
 
   //calculate & render tip amount per person
   const tipAmountValue = calculateTipPerPerson(numOfPeople, tip);
-  tipAmount.innerHTML = `$ ${tipAmountValue.toFixed(2)}`;
+  //if the value is not a number
+  if (tipAmountValue != NaN) {
+    tipAmount.innerHTML = '$0.00';
+  } else {
+    tipAmount.innerHTML = `$ ${tipAmountValue.toFixed(2)}`;
+  }
 
   //calculate & render total bill per person
   const totalBillValue = calculateTotalTip(
     numOfPeople,
     calculateTotalBill(billAmount, tip)
   );
-  total.innerHTML = `$${totalBillValue.toFixed(2)}`;
+  if (totalBillValue != NaN) {
+    total.innerHTML = '$0.00';
+  } else {
+    total.innerHTML = `$${totalBillValue.toFixed(2)}`;
+  }
 };
 
 //handler for percent buttons
