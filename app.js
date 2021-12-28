@@ -1,6 +1,7 @@
 const bill = document.querySelector('#bill');
 const people = document.querySelector('#people');
 const customTip = document.querySelector('#customTip');
+const reset = document.querySelector('#resetButton');
 
 const tipAmount = document.querySelector('.amount-number');
 const total = document.querySelector('.total-number');
@@ -26,6 +27,7 @@ const calculateTipPerPerson = (numOfPeople = 1, tip) => {
 };
 
 const onChangeHandler = () => {
+  reset.removeAttribute('disabled');
   const percentButton = document.querySelector('.active');
   let percent = null;
   if (percentButton === null) {
@@ -61,6 +63,7 @@ const onChangeHandler = () => {
 
 //handler for percent buttons
 const onClickHandler = (btn) => {
+  reset.removeAttribute('disabled');
   const buttons = document.querySelectorAll('.tip-buttons button');
   for (let button of buttons) {
     //if button class not empty
@@ -75,6 +78,7 @@ const onClickHandler = (btn) => {
 
 //handler for custom percent value
 const customHandler = () => {
+  reset.removeAttribute('disabled');
   const buttons = document.querySelectorAll('.tip-buttons button');
   //remove active state of percent buttons
   for (let button of buttons) {
