@@ -108,3 +108,21 @@ const customHandler = () => {
   );
   total.innerHTML = `$${totalBillValue.toFixed(2)}`;
 };
+
+const resetHandler = () => {
+  bill.value = '';
+  people.value = '';
+  customTip.value = '';
+  tipAmount.innerHTML = '$0.00';
+  total.innerHTML = '$0.00';
+  //reset tip button active state
+  const buttons = document.querySelectorAll('.tip-buttons button');
+  for (let button of buttons) {
+    //if button class not empty
+    if (button.classList != '') {
+      //remove active class
+      button.classList.toggle('active');
+    }
+  }
+  reset.setAttribute('disabled', 'true');
+};
