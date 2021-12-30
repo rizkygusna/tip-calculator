@@ -43,10 +43,10 @@ const onChangeHandler = () => {
   //calculate & render tip amount per person
   const tipAmountValue = calculateTipPerPerson(numOfPeople, tip);
   //if the value is not a number
-  if (tipAmountValue != NaN) {
+  if (isNaN(tipAmountValue)) {
     tipAmount.innerHTML = '$0.00';
   } else {
-    tipAmount.innerHTML = `$ ${tipAmountValue.toFixed(2)}`;
+    tipAmount.innerHTML = `$${tipAmountValue.toFixed(2)}`;
   }
 
   //calculate & render total bill per person
@@ -54,7 +54,7 @@ const onChangeHandler = () => {
     numOfPeople,
     calculateTotalBill(billAmount, tip)
   );
-  if (totalBillValue != NaN) {
+  if (isNaN(totalBillValue)) {
     total.innerHTML = '$0.00';
   } else {
     total.innerHTML = `$${totalBillValue.toFixed(2)}`;
@@ -99,14 +99,22 @@ const customHandler = () => {
 
   //calculate & render tip amount per person
   const tipAmountValue = calculateTipPerPerson(numOfPeople, tip);
-  tipAmount.innerHTML = `$ ${tipAmountValue.toFixed(2)}`;
+  if (isNaN(tipAmountValue)) {
+    tipAmount.innerHTML = '$0.00';
+  } else {
+    tipAmount.innerHTML = `$${tipAmountValue.toFixed(2)}`;
+  }
 
   //calculate & render total bill per person
   const totalBillValue = calculateTotalTip(
     numOfPeople,
     calculateTotalBill(billAmount, tip)
   );
-  total.innerHTML = `$${totalBillValue.toFixed(2)}`;
+  if (isNaN(totalBillValue)) {
+    total.innerHTML = '$0.00';
+  } else {
+    total.innerHTML = `$${totalBillValue.toFixed(2)}`;
+  }
 };
 
 const resetHandler = () => {
