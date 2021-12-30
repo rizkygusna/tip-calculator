@@ -89,9 +89,10 @@ const customHandler = () => {
     }
   }
 
-  let percent = null;
-  percent = customTip.value;
-  console.log(percent);
+  let percent = customTip.value;
+  if (percent === '') {
+    percent = 0;
+  }
   const numOfPeople = parseInt(people.value);
   const billAmount = parseFloat(bill.value);
   // const percent = percentButton.value;
