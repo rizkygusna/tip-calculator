@@ -64,6 +64,7 @@ const onChangeHandler = () => {
 //handler for percent buttons
 const onClickHandler = (btn) => {
   reset.removeAttribute('disabled');
+  customTip.value = '';
   const buttons = document.querySelectorAll('.tip-buttons button');
   for (let button of buttons) {
     //if button class not empty
