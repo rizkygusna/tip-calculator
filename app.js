@@ -27,22 +27,24 @@ const calculateTipPerPerson = (numOfPeople = 1, tip) => {
 };
 
 const onChangeHandler = () => {
+  //enable reset button
   reset.removeAttribute('disabled');
   const percentButton = document.querySelector('.active');
-  let percent = null;
+  let percent;
+  //if no percent button active
   if (percentButton === null) {
     percent = 0;
+    //if there is percent button active
   } else {
     percent = percentButton.value;
   }
   const numOfPeople = parseInt(people.value);
   const billAmount = parseFloat(bill.value);
-  // const percent = percentButton.value;
   const tip = calculateTip(billAmount, percent);
 
   //calculate & render tip amount per person
   const tipAmountValue = calculateTipPerPerson(numOfPeople, tip);
-  //if the value is not a number
+  //if the value is not a number because some value is empty
   if (isNaN(tipAmountValue)) {
     tipAmount.innerHTML = '$0.00';
   } else {
@@ -54,6 +56,7 @@ const onChangeHandler = () => {
     numOfPeople,
     calculateTotalBill(billAmount, tip)
   );
+  //if the value is not a number because some value is empty
   if (isNaN(totalBillValue)) {
     total.innerHTML = '$0.00';
   } else {
@@ -63,9 +66,13 @@ const onChangeHandler = () => {
 
 //handler for percent buttons
 const onClickHandler = (btn) => {
+  //enable reset button
   reset.removeAttribute('disabled');
+  //reset custom tip value
   customTip.value = '';
+
   const buttons = document.querySelectorAll('.tip-buttons button');
+  //remove previous active button
   for (let button of buttons) {
     //if button class not empty
     if (button.classList != '') {
@@ -73,12 +80,15 @@ const onClickHandler = (btn) => {
       button.classList.toggle('active');
     }
   }
+  //activate the clicked button
   btn.classList.toggle('active');
+  //run calculation
   onChangeHandler();
 };
 
 //handler for custom percent value
 const customHandler = () => {
+  //enable reset button
   reset.removeAttribute('disabled');
   const buttons = document.querySelectorAll('.tip-buttons button');
   //remove active state of percent buttons
@@ -96,11 +106,11 @@ const customHandler = () => {
   }
   const numOfPeople = parseInt(people.value);
   const billAmount = parseFloat(bill.value);
-  // const percent = percentButton.value;
   const tip = calculateTip(billAmount, percent);
 
   //calculate & render tip amount per person
   const tipAmountValue = calculateTipPerPerson(numOfPeople, tip);
+  //if the value is not a number because some value is empty
   if (isNaN(tipAmountValue)) {
     tipAmount.innerHTML = '$0.00';
   } else {
@@ -112,6 +122,7 @@ const customHandler = () => {
     numOfPeople,
     calculateTotalBill(billAmount, tip)
   );
+  //if the value is not a number because some value is empty
   if (isNaN(totalBillValue)) {
     total.innerHTML = '$0.00';
   } else {
