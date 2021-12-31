@@ -148,6 +148,12 @@ label[for='people']:before {
   font-weight: bold;
 }
 
+.people-input span {
+  visibility: hidden;
+  padding-left: 10em;
+  color: hsl(8, 68%, 58%);
+}
+
 .result {
   width: 100%;
   padding: 1em;

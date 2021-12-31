@@ -3,6 +3,7 @@ const people = document.querySelector('#people');
 const customTip = document.querySelector('#customTip');
 const reset = document.querySelector('#resetButton');
 
+const msg = document.querySelector('#validationMsg');
 const tipAmount = document.querySelector('.amount-number');
 const total = document.querySelector('.total-number');
 
@@ -38,7 +39,16 @@ const onChangeHandler = () => {
   } else {
     percent = percentButton.value;
   }
+
   const numOfPeople = parseInt(people.value);
+  if (numOfPeople < 1) {
+    msg.style.visibility = 'visible';
+    people.style.outlineColor = 'hsl(8, 68%, 58%)';
+    return;
+  } else {
+    msg.style.visibility = 'hidden';
+    people.style.outlineColor = 'hsl(172, 67%, 45%)';
+  }
   const billAmount = parseFloat(bill.value);
   const tip = calculateTip(billAmount, percent);
 
