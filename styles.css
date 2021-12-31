@@ -148,9 +148,22 @@ label[for='people']:before {
   font-weight: bold;
 }
 
+.people-input .container-flex {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+label[for='people'] {
+  position: relative;
+}
+
+label[for='people'] span {
+  position: absolute;
+  right: 0%;
+}
+
 .people-input span {
   visibility: hidden;
-  padding-left: 10em;
   color: hsl(8, 68%, 58%);
 }
 
