@@ -13,7 +13,7 @@ body {
   height: 100vh;
 }
 
-header {
+h1 {
   font-size: 1.6rem;
   text-transform: uppercase;
   text-align: center;
